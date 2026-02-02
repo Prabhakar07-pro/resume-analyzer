@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- ✅ ADDED: minimal layout fix -->
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        .container {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Resume Analyzer</h1>
+    <p class="subtitle">Upload your resume to discover your best-fit roles</p>
+
+    <form class="upload-box" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="resume" required>
+        <button type="submit">Analyze Resume</button>
+    </form>
+
+    {% if results %}
+        <h2 class="results-title">Suggested Roles</h2>
+
+        <div class="cards">
+            {% for r in results %}
+            <div class="card">
+                <div class="card-header">
+                    <h3>{{ r.role }}</h3>
+                    <span class="score">{{ r.match_score }}%</span>
+                </div>
+
+                <div class="card-body">
+                    <p><strong>Matched Skills</strong></p>
+                    <div class="skills matched">
+                        {% for skill in r.matched_skills %}
+                            <span>{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+
+                    <p><strong>Missing Skills</strong></p>
+                    <div class="skills missing">
+                        {% for skill in r.missing_skills %}
+                            <span>{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<!-- ✅ MODIFIED: show Back to Top ONLY after results -->
+{% if results %}
+<button class="top" onclick="goToTop()">
+    Back to Top &#11014;
+</button>
+{% endif %}
+
+<script>
+function goToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+<footer class="footer">
+    <p>© 2026 Prabhakar Ramaphalam</p>
+</footer>
+
+</body>
+</html>
