@@ -1,8 +1,11 @@
 # Resume Analyzer
 
-A full-stack Resume Analyzer application that extracts skills from uploaded resumes and recommends suitable job roles with match percentages.
+A full-stack Resume Analyzer web application that extracts skills from uploaded resumes and recommends suitable job roles with match percentages.
 
-## Features
+## 🔗 Live Demo
+👉 https://resume-analyzer-dr6t.onrender.com
+
+## 🚀 Features
 - Resume upload (PDF)
 - Automatic skill extraction
 - Role recommendation engine
@@ -10,24 +13,22 @@ A full-stack Resume Analyzer application that extracts skills from uploaded resu
 - Clean and responsive UI
 
 ## 🛠 Tech Stack
-- Python
+- Python 3.11
 - FastAPI
+- Uvicorn
 - HTML
 - CSS
 - JavaScript
 
-##  Project Structure
-- `parsing/` – Resume parsing  
-- `extraction/` – Skill extraction
-- `recommendation/` – Role matching logic
-- `templates/` – HTML,JavaScript templates
-- `static/` – CSS styles
+## 📂 Project Structure
+- `app/` – FastAPI application entry point  
+- `parsing/` – Resume parsing logic  
+- `extraction/` – Skill extraction  
+- `recommendation/` – Role matching logic  
+- `templates/` – HTML templates  
+- `static/` – CSS styles  
 
- 
-## How to Run Locally
+## ▶️ Run Locally
 ```bash
 pip install -r requirements.txt
-python app.py
-
-## Live Demo
-https://resume-analyzer-dr6t.onrender.com
+uvicorn app.main:app --reload
