@@ -28,3 +28,6 @@ A full-stack Resume Analyzer application that extracts skills from uploaded resu
 ```bash
 pip install -r requirements.txt
 python app.py
+
+## Live Demo
+https://resume-analyzer-dr6t.onrender.com
