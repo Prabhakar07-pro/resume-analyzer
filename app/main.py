@@ -63,3 +63,8 @@ async def upload_resume(
             "results": recommendations
         }
     )
+
+
+@app.get("/")
+def root():
+    return {"message": "Resume Analyzer running"}
