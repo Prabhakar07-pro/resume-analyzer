@@ -31,22 +31,18 @@ SKILL_ALIASES = {
     # ===== NLP / AI Variants =====
     "natural language processing": "nlp",
 
+    # TensorFlow
+    "tf": "tensorflow",
+    "keras": "tensorflow",
 
-    # REST
-"rest apis": "rest api",
+    # PyTorch
+    "torch": "pytorch",
 
-# TensorFlow
-"tf": "tensorflow",
-"keras": "tensorflow",
+    # UI/UX
+    "ui/ux": "ui ux",
 
-# PyTorch
-"torch": "pytorch",
-
-# UI/UX
-"ui/ux": "ui ux",
-
-# CI/CD
-"ci/cd": "ci cd"
+    # CI/CD
+    "ci/cd": "ci cd"
 
 
 
@@ -84,7 +80,7 @@ def calculate_match_score(
 def recommend_roles(
     resume_skills: List[str],
     top_n: int = 4,
-    min_score: float = 55.0 # keep low to avoid empty results
+    min_score: float = 50.0 
 ) -> List[Dict]:
     """
     Recommend roles based on extracted resume skills.
@@ -96,7 +92,7 @@ def recommend_roles(
         - missing_skills
     """
 
-    # ✅ MISSING LINES (VERY IMPORTANT)
+
     resume_skills_set = normalize_skills(resume_skills)
     recommendations = []
 
