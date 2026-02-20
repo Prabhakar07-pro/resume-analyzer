@@ -1,30 +1,20 @@
-function goToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".top").style.display = "none";
-});
-
-window.addEventListener("scroll", function () {
 
     const button = document.querySelector(".top");
 
-    const scrollPosition = window.scrollY;
-    const pageHeight = document.documentElement.scrollHeight;
-    const windowHeight = window.innerHeight;
+    // Hide initially
+    button.style.display = "none";
 
-    const halfwayPoint = (pageHeight - windowHeight) / 2;
+    window.addEventListener("scroll", function () {
 
-    if (scrollPosition > halfwayPoint) {
-        button.style.display = "block";
-    } else {
-        button.style.display = "none";
-    }
+        if (window.scrollY > 250) {   // show after 300px scroll
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+
+    });
+
 });
 
 function goToTop() {
