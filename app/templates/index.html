@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Resume Analyzer</title>
-    <link rel="stylesheet" href="/static/style.css">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Resume Analyzer</title>
+     <link rel="stylesheet" href="/static/style.css?v=1">
+
 
     <style>
         body {
@@ -31,8 +33,28 @@
 
     {% if results is defined %}
 
-        {% if results and results|length > 0 %}
-            <h2 class="results-title">Suggested Roles</h2>
+         {% if results and results|length > 0 %}
+
+    <!-- Top Role Highlight Card -->
+    <div class="top-highlight-card">
+        <div class="top-role-content">
+
+            <img src="/static/images/{{ results[0].role | lower }}.png"
+                 alt="Top Role"
+                 class="top-role-image">
+
+            <div class="top-role-text">
+             <h2>{{ results[0].role }}</h2>
+             <p>This is your strongest role match based on skill alignment‼️</p>
+             <p>Your profile demonstrates high relevance for this position.</p>
+           </div>
+
+
+        </div>
+    </div>
+
+    <h2 class="results-title">Suggested Roles</h2>
+
 
             <div class="cards">
                 {% for r in results %}

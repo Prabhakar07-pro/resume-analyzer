@@ -1,4 +1,4 @@
-* * {
+*  {
     box-sizing: border-box;
     font-family: "Segoe UI", sans-serif;
 }
@@ -59,7 +59,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* ✅ cards layout exactly like 2nd image */
+ 
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -73,7 +73,7 @@ h1 {
 }
 
 .card {
-    background: blanchedalmond;
+    background: blanchedalmond ;
     border-radius: 12px;
     padding: 16px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
@@ -90,7 +90,7 @@ h1 {
 }
 
 .score {
-    background: #e0f2fe;
+    background: whitesmoke;
     color: green;
     padding: 6px 10px;
     border-radius: 999px;
@@ -131,7 +131,7 @@ h1 {
     font-size: 14px;
 }
 
-/* ✅ BACK TO TOP — EXACTLY AS YOU GAVE */
+ 
 .top{
     position: fixed;
     bottom: 10px;
@@ -154,4 +154,37 @@ h1 {
     text-align: center;
     margin-top: 30px;
     border: 1px solid #ffeeba;
+}
+
+.top-highlight-card{
+    background: blanchedalmond;
+    padding: 24px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+    
+}
+
+.top-role-content{
+    display: flex;
+    align-items: top;
+    gap: 40px;
+}
+
+.top-role-image{
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.top-role-text h2{
+    margin-bottom: 15px;
+    color: navy;
+    font-size: 30px;
+}
+
+.top-role-text p{
+    font-size: 18px;
+    color: black;
+    margin: 4px 0;
 }
